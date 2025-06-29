@@ -73,6 +73,27 @@
     .highlight {
       color: #d4af37;
     }
+
+    .typewriter h2 {
+      overflow: hidden;
+      border-right: .15em solid #d4af37;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .05em;
+      animation:
+        typing 3s steps(30, end),
+        blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #d4af37 }
+    }
   </style>
 </head>
 <body>
@@ -86,14 +107,17 @@
   </header>
 
   <div class="container">
-    <h2>Who Are We</h2>
-    <p>At Legal Ai(d), we are dedicated to bridging the gap between underserved communities and the legal system by providing free, accessible, and reliable legal resources through innovative technology. We believe that everyone, regardless of their background or circumstances, deserves equal access to justice.</p>
+    <div class="typewriter">
+      <h2>Who Are We</h2>
+    </div>
+    <p>
+      At Legal Ai(d), we are dedicated to bridging the gap between underserved communities and the legal system by providing free, accessible, and reliable legal resources through innovative technology. We believe that everyone, regardless of their background or circumstances, deserves equal access to justice.
+    </p>
   </div>
 
   <script>
     const links = document.querySelectorAll("nav a");
     const path = window.location.pathname.split("/").pop() || "index.html";
-
     links.forEach(link => {
       if (link.getAttribute("href") === path) {
         link.classList.add("active");
