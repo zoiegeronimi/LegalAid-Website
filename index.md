@@ -53,12 +53,12 @@
 
   <div class="container" id="home">
     <h1>Welcome to Legal Ai(d)!</h1>
-    <p>Making a difference, one step at a time.</p>
+    <p>Legal Ai(d) is a nonprofit initiative dedicated to increasing legal awareness and accesibility for communities in NYC. By combining both law and technology our app provides legal guidance, non-partisan legal updates, community resources, and connections to legal aid & pro bono services.</p>
   </div>
 
   <div class="container" id="who">
     <h2>Who Are We</h2>
-    <p>We are a team of dedicated individuals working to bring positive change to our community through impactful programs and outreach.</p>
+    <p>At Legal Ai(d) we are dedicated to bridging the gap between underserved commnities and the legal system by providing free, accessible, and reliable legal resources through innovative technology. We believe that everyone, regardless of their background or circumstances, deserves equal access to justice.</p>
   </div>
 
   <div class="container" id="donate">
