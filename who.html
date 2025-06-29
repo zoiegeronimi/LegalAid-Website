@@ -81,57 +81,77 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 3rem;
       margin-top: 3rem;
     }
 
     .team-card {
       background-color: #2b2f4a;
       border-radius: 12px;
-      width: 200px;
-      padding: 1rem;
+      width: 260px;
+      padding: 2rem 1.5rem 1.5rem;
       text-align: center;
       position: relative;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
+      box-shadow: 0 0 10px transparent;
     }
 
     .team-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-7px);
+      box-shadow: 0 0 15px #d4af37;
     }
 
     .team-card img {
-      width: 100px;
-      height: 100px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 1rem;
-      border: 2px solid #d4af37;
+      margin-bottom: 1.25rem;
+      border: 3px solid #d4af37;
+      transition: transform 0.3s ease;
+    }
+
+    .team-card:hover img {
+      transform: scale(1.05);
     }
 
     .team-card h4 {
       margin: 0.5rem 0 0.25rem;
       color: #d4af37;
+      font-size: 1.4rem;
     }
 
     .team-card p {
       margin: 0;
-      font-size: 0.9rem;
+      font-size: 1rem;
+      color: #ccc;
     }
 
-    .team-description {
-      display: none;
-      background-color: #1a1f36;
-      color: white;
-      padding: 0.75rem;
-      margin-top: 0.5rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      text-align: left;
+    /* The description area below cards */
+    #team-description-container {
+      margin-top: 3rem;
+      min-height: 140px;
+      background-color: #2b2f4a;
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #d4af37;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      text-align: center;
+      box-shadow: 0 0 15px #d4af37;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      user-select: none;
     }
 
-    .team-card.active .team-description {
-      display: block;
+    #team-description-container.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -140,7 +160,7 @@
     <div class="logo"><strong class="highlight">Legal Ai(d)</strong></div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="who.html">Who Are We</a>
+      <a href="who.html" class="active">Who Are We</a>
       <a href="donate.html">Donate</a>
     </nav>
   </header>
@@ -152,65 +172,71 @@
     </p>
 
     <div class="team-section">
-      <div class="team-card" onclick="toggleDescription(this)">
-        <img src="images/member1.jpeg" alt="Member 1">
+      <div class="team-card" data-description="Zoie is dedicated to exploring and analyzing the intersection of technology and social justice, focusing on using data-driven solutions to address systemic inequities.">
+        <img src="images/member1.jpeg" alt="Zoie Geronimi" />
         <h4>Zoie Geronimi</h4>
         <p>Co-Founder, Head of Technology</p>
-        <div class="team-description">
-          Zoie is dedicated to exploring and analyzing the intersection of technology and social justice, focusing on using data-driven solutions to address systemic inequities.
-        </div>
       </div>
 
-      <div class="team-card" onclick="toggleDescription(this)">
-        <img src="images/member2.jpeg" alt="Member 2">
+      <div class="team-card" data-description="Sophia is a sophomore at Columbia studying Political Science, History, and Sociology. She is an intern at Boies, Schiller, Flexner, LLP and a research assistant at Teachers College of Columbia University.">
+        <img src="images/member2.jpeg" alt="Sophia Stoute" />
         <h4>Sophia Stoute</h4>
         <p>Co-Founder</p>
-        <div class="team-description">
-          Sophia is a sophomore at Columbia studying Political Science, History, and Sociology. She is an intern at Boies, Schiller, Flexner, LLP and a research assistant at Teachers College of Columbia University.
-        </div>
       </div>
 
-      <div class="team-card" onclick="toggleDescription(this)">
-        <img src="images/member3.jpeg" alt="Member 3">
+      <div class="team-card" data-description="Ashley is studying Statistics, interested in the intersections between Data Science and Social Justice and using number and data to promote social equity in marginalized communities.">
+        <img src="images/member3.jpeg" alt="Ashley Rokotoarivo" />
         <h4>Ashley Rokotoarivo</h4>
         <p>Head of Engagement</p>
-        <div class="team-description">
-          Ashley is studying Statistics, interested in the intersections between Data Science and Social Justice and using number and data to promote social equity in marginalized communities.
-        </div>
       </div>
 
-      <div class="team-card" onclick="toggleDescription(this)">
-        <img src="images/member4.jpeg" alt="Member 4">
+      <div class="team-card" data-description="Elijah is a junior at Columbia majoring in economics and statistics.">
+        <img src="images/member4.jpeg" alt="Elijah Massenburg" />
         <h4>Elijah Massenburg</h4>
         <p>Treasurer</p>
-        <div class="team-description">
-          Elijah is a junior at Columbia majoring in economics and statistics.
-        </div>
       </div>
 
-      <div class="team-card" onclick="toggleDescription(this)">
-        <img src="images/member5.jpeg" alt="Member 5">
+      <div class="team-card" data-description="(Add Habiba's description here)">
+        <img src="images/member5.jpeg" alt="Habiba Sayma" />
         <h4>Habiba Sayma</h4>
-        <p>TITLE HERE</p>
-        <div class="team-description">
-          DESCRIPTION HERE
-        </div>
+        <p>Title Here</p>
       </div>
     </div>
+
+    <div id="team-description-container" aria-live="polite" aria-atomic="true"></div>
   </div>
 
   <script>
-    function toggleDescription(card) {
-      const isActive = card.classList.contains('active');
-      document.querySelectorAll('.team-card').forEach(c => c.classList.remove('active'));
-      if (!isActive) {
-        card.classList.add('active');
-      }
-    }
+    const cards = document.querySelectorAll('.team-card');
+    const descContainer = document.getElementById('team-description-container');
 
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        // Remove active from all
+        cards.forEach(c => c.classList.remove('active'));
+        // Add active to clicked card
+        card.classList.add('active');
+        // Show description text from data attribute
+        descContainer.textContent = card.getAttribute('data-description');
+        // Show container with animation
+        descContainer.classList.add('visible');
+        // Scroll to description for better UX on small screens
+        descContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+
+    // Optionally, clear description if clicking outside cards
+    document.body.addEventListener('click', e => {
+      if (!e.target.closest('.team-card')) {
+        cards.forEach(c => c.classList.remove('active'));
+        descContainer.classList.remove('visible');
+        descContainer.textContent = '';
+      }
+    });
+
+    // Highlight current nav link
     const links = document.querySelectorAll("nav a");
     const path = window.location.pathname.split("/").pop() || "index.html";
-
     links.forEach(link => {
       if (link.getAttribute("href") === path) {
         link.classList.add("active");
