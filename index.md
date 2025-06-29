@@ -4,7 +4,7 @@ layout: default
 ---
 
 <header>
-  <div class="logo"><strong style="color:#d4af37;">Legal Ai(d)</strong> Org</div>
+  <div class="logo"><strong style="color:#d4af37;">Legal Ai(d)</strong></div>
   <nav>
     <a href="#home">Home</a>
     <a href="#who">Who Are We</a>
