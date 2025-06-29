@@ -65,5 +65,17 @@
     <h2>Who Are We</h2>
     <p>At Legal Ai(d), we are dedicated to bridging the gap between underserved communities and the legal system by providing free, accessible, and reliable legal resources through innovative technology. We believe that everyone, regardless of their background or circumstances, deserves equal access to justice.</p>
   </div>
+
+  <script>
+    const links = document.querySelectorAll("nav a");
+    const path = window.location.pathname.split("/").pop() || "index.html";
+
+    links.forEach(link => {
+      if (link.getAttribute("href") === path) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+  
 </body>
 </html>
