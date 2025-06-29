@@ -11,6 +11,12 @@
       background-color: #1a1f36;
       color: white;
       min-height: 100vh;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
 
     header {
@@ -27,9 +33,27 @@
       text-decoration: none;
       margin-left: 2rem;
       font-weight: bold;
+      position: relative;
+      transition: color 0.3s ease;
     }
 
-    nav a:hover {
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: #d4af37;
+      bottom: -4px;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover,
+    nav a.active {
       color: #d4af37;
     }
 
@@ -47,6 +71,24 @@
     .highlight {
       color: #d4af37;
     }
+
+    .donate-button {
+      margin-top: 1.5rem;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #d4af37;
+      border-radius: 5px;
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .donate-button:hover {
+      background-color: #d4af37;
+      color: #1a1f36;
+      box-shadow: 0 0 10px #d4af37;
+    }
   </style>
 </head>
 <body>
@@ -62,19 +104,17 @@
   <div class="container">
     <h2>Donate</h2>
     <p>Your support helps us continue our mission. Thank you for your generosity!</p>
-    <a href="https://www.yourdonationlink.com" style="color: #d4af37; font-weight: bold;">Click here to donate</a>
+    <a href="https://www.yourdonationlink.com" class="donate-button">Click here to donate</a>
   </div>
 
   <script>
     const links = document.querySelectorAll("nav a");
     const path = window.location.pathname.split("/").pop() || "index.html";
-
     links.forEach(link => {
       if (link.getAttribute("href") === path) {
         link.classList.add("active");
       }
     });
   </script>
-  
 </body>
 </html>
