@@ -19,26 +19,25 @@
       to { opacity: 1; }
     }
 
-header {
-  background-color: #1a1f36;
-  padding: 2rem 2rem; /* Increased top/bottom padding */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid #d4af37;
-  font-size: 1.4rem; /* Makes all text inside bigger */
-}
+    header {
+      background-color: #1a1f36;
+      padding: 2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #d4af37;
+      font-size: 1.4rem;
+    }
 
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 2.5rem;
-  font-weight: bold;
-  position: relative;
-  transition: color 0.3s ease;
-  font-size: 1.3rem; /* Enlarges nav link text */
-}
-
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 2.5rem;
+      font-weight: bold;
+      position: relative;
+      transition: color 0.3s ease;
+      font-size: 1.3rem;
+    }
 
     nav a::after {
       content: '';
@@ -97,15 +96,18 @@ nav a {
     }
 
     .donate-button {
-      margin-top: 1rem;
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
+      margin: 2rem auto 0;
+      display: block;
+      padding: 1rem 2rem;
       border: 2px solid #d4af37;
       border-radius: 5px;
       color: #d4af37;
       text-decoration: none;
       font-weight: bold;
       transition: all 0.3s ease;
+      width: 70%;
+      max-width: 400px;
+      text-align: center;
     }
 
     .donate-button:hover {
@@ -172,7 +174,7 @@ nav a {
       Legal Ai(d) is a nonprofit initiative dedicated to increasing legal awareness and accessibility for communities in NYC. By combining both law and technology, our app provides legal guidance, non-partisan legal updates, community resources, and connections to legal aid & pro bono services.
     </p>
 
-    <img src="images/LegalAidVideo.gif" alt="App demo" class="app-demo" /
+    <img src="images/LegalAidVideo.gif" alt="App demo" class="app-demo" />
 
     <div class="faq-section">
       <div class="faq-item">
@@ -188,9 +190,9 @@ nav a {
         <p>Absolutely. We do not store or share any of your personal data. Your privacy is a top priority.</p>
       </div>
     </div>
-  </div>
 
-  <a href="donate.html" class="donate-button">Support Our Work</a>
+    <a href="donate.html" class="donate-button">Support Our Work</a>
+  </div>
 
   <script>
     const links = document.querySelectorAll("nav a");
