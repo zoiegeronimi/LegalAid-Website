@@ -66,5 +66,17 @@
     <p>Your support helps us continue our mission. Thank you for your generosity!</p>
     <a href="https://www.yourdonationlink.com" style="color: #d4af37; font-weight: bold;">Click here to donate</a>
   </div>
+
+  <script>
+    const links = document.querySelectorAll("nav a");
+    const path = window.location.pathname.split("/").pop() || "index.html";
+
+    links.forEach(link => {
+      if (link.getAttribute("href") === path) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+  
 </body>
 </html>
