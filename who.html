@@ -21,7 +21,7 @@
 
     header {
       background-color: #1a1f36;
-      padding: 2rem 2rem;
+      padding: 1.5rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -32,15 +32,14 @@
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 2.5rem;
+      margin-left: 2rem;
       font-weight: bold;
       position: relative;
       transition: color 0.3s ease;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
 
-    nav a::after,
-    nav a.active::after {
+    nav a::after {
       content: '';
       position: absolute;
       width: 0%;
@@ -63,38 +62,76 @@
 
     .container {
       padding: 4rem 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
+      text-align: center;
     }
 
     .highlight {
       color: #d4af37;
     }
 
-    .typewriter h2 {
-      overflow: hidden;
-      border-right: .15em solid #d4af37;
-      white-space: nowrap;
-      margin: 0 auto;
-      letter-spacing: .05em;
-      animation:
-        typing 3s steps(30, end),
-        blink-caret .75s step-end infinite;
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #d4af37;
     }
 
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+    .team-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
     }
 
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #d4af37 }
+    .team-card {
+      background-color: #2b2f4a;
+      border-radius: 12px;
+      width: 200px;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 2px solid #d4af37;
+    }
+
+    .team-card h4 {
+      margin: 0.5rem 0 0.25rem;
+      color: #d4af37;
+    }
+
+    .team-card p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .team-description {
+      display: none;
+      background-color: #1a1f36;
+      color: white;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+
+    .team-card.active .team-description {
+      display: block;
     }
   </style>
 </head>
@@ -109,17 +146,71 @@
   </header>
 
   <div class="container">
-    <div class="typewriter">
-      <h2>Who Are We</h2>
-    </div>
+    <h2>Who Are We</h2>
     <p>
       At Legal Ai(d), we are dedicated to bridging the gap between underserved communities and the legal system by providing free, accessible, and reliable legal resources through innovative technology. We believe that everyone, regardless of their background or circumstances, deserves equal access to justice.
     </p>
+
+    <div class="team-section">
+      <div class="team-card" onclick="toggleDescription(this)">
+        <img src="images/member1.jpeg" alt="Member 1">
+        <h4>Zoie Geronimi</h4>
+        <p>Co-Founder, Head of Technology</p>
+        <div class="team-description">
+          Zoie is dedicated to exploring and analyzing the intersection of technology and social justice, focusing on using data-driven solutions to address systemic inequities.
+        </div>
+      </div>
+
+      <div class="team-card" onclick="toggleDescription(this)">
+        <img src="images/member2.jpeg" alt="Member 2">
+        <h4>Sophia Stoute</h4>
+        <p>Co-Founder</p>
+        <div class="team-description">
+          Sophia is a sophomore at Columbia studying Political Science, History, and Sociology. She is an intern at Boies, Schiller, Flexner, LLP and a research assistant at Teachers College of Columbia University.
+        </div>
+      </div>
+
+      <div class="team-card" onclick="toggleDescription(this)">
+        <img src="images/member3.jpeg" alt="Member 3">
+        <h4>Ashley Rokotoarivo</h4>
+        <p>Head of Engagement</p>
+        <div class="team-description">
+          Ashley is studying Statistics, interested in the intersections between Data Science and Social Justice and using number and data to promote social equity in marginalized communities.
+        </div>
+      </div>
+
+      <div class="team-card" onclick="toggleDescription(this)">
+        <img src="images/member4.jpeg" alt="Member 4">
+        <h4>Elijah Massenburg</h4>
+        <p>Treasurer</p>
+        <div class="team-description">
+          Elijah is a junior at Columbia majoring in economics and statistics.
+        </div>
+      </div>
+
+      <div class="team-card" onclick="toggleDescription(this)">
+        <img src="images/member5.jpeg" alt="Member 5">
+        <h4>Habiba Sayma</h4>
+        <p>TITLE HERE</p>
+        <div class="team-description">
+          DESCRIPTION HERE
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
+    function toggleDescription(card) {
+      const isActive = card.classList.contains('active');
+      document.querySelectorAll('.team-card').forEach(c => c.classList.remove('active'));
+      if (!isActive) {
+        card.classList.add('active');
+      }
+    }
+
     const links = document.querySelectorAll("nav a");
     const path = window.location.pathname.split("/").pop() || "index.html";
+
     links.forEach(link => {
       if (link.getAttribute("href") === path) {
         link.classList.add("active");
