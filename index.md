@@ -1,0 +1,61 @@
+---
+title: Legal Ai(d)
+layout: default
+---
+
+<header>
+  <div class="logo"><strong style="color:#d4af37;">Legal Ai(d)</strong> Org</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#who">Who Are We</a>
+    <a href="#donate">Donate</a>
+  </nav>
+</header>
+
+<div class="container" id="home">
+  <h1>Welcome to Legal Ai(d)!</h1>
+  <p>Making a difference, one step at a time.</p>
+</div>
+
+<div class="container" id="who">
+  <h2>Who Are We</h2>
+  <p>We are a team of dedicated individuals working to bring positive change to our community through impactful programs and outreach.</p>
+</div>
+
+<div class="container" id="donate">
+  <h2>Donate</h2>
+  <p>Your support helps us continue our mission. Thank you for your generosity!</p>
+  <a href="https://www.yourdonationlink.com" style="color: #d4af37; font-weight: bold;">Click here to donate</a>
+</div>
+
+<style>
+  body {
+    background-color: #1a1f36;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+
+  header {
+    background-color: #1a1f36;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #d4af37;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    color: #d4af37;
+  }
+
+  .container {
+    padding: 2rem;
+  }
+</style>
