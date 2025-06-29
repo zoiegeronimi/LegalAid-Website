@@ -51,7 +51,7 @@
 </head>
 <body>
   <header>
-    <div class="logo"><strong class="highlight">Legal Ai(d)</strong> Org</div>
+    <div class="logo"><strong class="highlight">Legal Ai(d)</strong></div>
     <nav>
       <a href="index.html">Home</a>
       <a href="who.html">Who Are We</a>
