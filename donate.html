@@ -72,47 +72,51 @@
       margin: 0 auto;
     }
 
+    h2 {
+      font-size: 2.5rem;
+      color: #d4af37;
+      margin-bottom: 1rem;
+    }
+
     .highlight {
       color: #d4af37;
     }
 
-    .donate-button {
+    .donate-info {
+      background-color: #2b2f4a;
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 6px solid #d4af37;
       margin-top: 1.5rem;
+      line-height: 1.7;
+      font-size: 1.1rem;
+      box-shadow: 0 0 10px #000;
+      transition: transform 0.3s ease;
+    }
+
+    .donate-info:hover {
+      transform: translateY(-5px);
+    }
+
+    .donate-button {
+      margin-top: 2rem;
       display: inline-block;
-      padding: 0.75rem 1.5rem;
+      padding: 1rem 2rem;
       border: 2px solid #d4af37;
-      border-radius: 5px;
+      border-radius: 8px;
       color: #d4af37;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1.2rem;
       transition: all 0.3s ease;
+      box-shadow: 0 0 10px transparent;
     }
 
     .donate-button:hover {
       background-color: #d4af37;
       color: #1a1f36;
-      box-shadow: 0 0 10px #d4af37;
-    }
-
-    .typewriter h2 {
-      overflow: hidden;
-      border-right: .15em solid #d4af37;
-      white-space: nowrap;
-      margin: 0 auto;
-      letter-spacing: .05em;
-      animation:
-        typing 3s steps(30, end),
-        blink-caret .75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #d4af37 }
+      box-shadow: 0 0 15px #d4af37;
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -127,10 +131,14 @@
   </header>
 
   <div class="container">
-    <div class="typewriter">
-      <h2>Donate</h2>
+    <h2>Donate</h2>
+
+    <div class="donate-info">
+      <p>Your support helps us continue our mission. Thank you for your generosity!</p>
+      <p>At Legal Ai(d), we use donations to support our incredible team and expand our work into new cities and states.</p>
+      <p>If you have any questions, concerns, or feedback, please reach out to us at <strong>legalainyc@gmail.com</strong></p>
     </div>
-    <p>Your support helps us continue our mission. Thank you for your generosity!</p>
+
     <a href="https://www.yourdonationlink.com" class="donate-button">Click here to donate</a>
   </div>
 
