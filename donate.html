@@ -91,6 +91,27 @@
       color: #1a1f36;
       box-shadow: 0 0 10px #d4af37;
     }
+
+    .typewriter h2 {
+      overflow: hidden;
+      border-right: .15em solid #d4af37;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .05em;
+      animation:
+        typing 3s steps(30, end),
+        blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #d4af37 }
+    }
   </style>
 </head>
 <body>
@@ -104,7 +125,9 @@
   </header>
 
   <div class="container">
-    <h2>Donate</h2>
+    <div class="typewriter">
+      <h2>Donate</h2>
+    </div>
     <p>Your support helps us continue our mission. Thank you for your generosity!</p>
     <a href="https://www.yourdonationlink.com" class="donate-button">Click here to donate</a>
   </div>
@@ -112,7 +135,6 @@
   <script>
     const links = document.querySelectorAll("nav a");
     const path = window.location.pathname.split("/").pop() || "index.html";
-
     links.forEach(link => {
       if (link.getAttribute("href") === path) {
         link.classList.add("active");
