@@ -110,6 +110,42 @@
       color: #1a1f36;
       box-shadow: 0 0 10px #d4af37;
     }
+
+    .logo-image {
+      width: 120px;
+      margin-bottom: 1.5rem;
+    }
+
+    .app-demo {
+      width: 250px;
+      border-radius: 1rem;
+      margin: 2rem 0;
+      box-shadow: 0 0 15px #d4af37;
+    }
+
+    .faq-section {
+      margin-top: 4rem;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .faq-item {
+      background-color: #2b2f4a;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid #d4af37;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
+
+    .faq-item:hover {
+      background-color: #35395c;
+    }
+
+    .faq-item h3 {
+      margin: 0 0 0.5rem;
+      color: #d4af37;
+    }
   </style>
 </head>
 <body>
@@ -123,13 +159,34 @@
   </header>
 
   <div class="container">
+    <img src="icon.png" alt="Legal Ai(d) logo" class="logo-image" />
+
     <div class="typewriter">
       <h1>Welcome to Legal Ai(d)!</h1>
     </div>
+
     <p style="margin-top: 1rem;">
       Legal Ai(d) is a nonprofit initiative dedicated to increasing legal awareness and accessibility for communities in NYC. By combining both law and technology, our app provides legal guidance, non-partisan legal updates, community resources, and connections to legal aid & pro bono services.
     </p>
+
+    <img src="iphone-view.gif" alt="App demo" class="app-demo" />
+
     <a href="donate.html" class="donate-button">Support Our Work</a>
+
+    <div class="faq-section">
+      <div class="faq-item">
+        <h3>📱 Is Legal Ai(d) free to use?</h3>
+        <p>Yes! Legal Ai(d) is completely free to use. Our mission is to make legal support accessible to everyone.</p>
+      </div>
+      <div class="faq-item">
+        <h3>🤖 How does the app work?</h3>
+        <p>The app asks you a few simple questions and then provides personalized resources and referrals based on your situation.</p>
+      </div>
+      <div class="faq-item">
+        <h3>🔐 Is my information safe?</h3>
+        <p>Absolutely. We do not store or share any of your personal data. Your privacy is a top priority.</p>
+      </div>
+    </div>
   </div>
 
   <script>
