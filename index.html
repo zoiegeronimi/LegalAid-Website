@@ -11,6 +11,12 @@
       background-color: #1a1f36;
       color: white;
       min-height: 100vh;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
     }
 
     header {
@@ -27,12 +33,28 @@
       text-decoration: none;
       margin-left: 2rem;
       font-weight: bold;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: #d4af37;
+      bottom: -4px;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     nav a:hover,
     nav a.active {
       color: #d4af37;
-      text-decoration: underline;
     }
 
     .container {
@@ -49,6 +71,45 @@
     .highlight {
       color: #d4af37;
     }
+
+    .typewriter h1 {
+      overflow: hidden;
+      border-right: .15em solid #d4af37;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .05em;
+      animation:
+        typing 3s steps(40, end),
+        blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #d4af37 }
+    }
+
+    .donate-button {
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #d4af37;
+      border-radius: 5px;
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .donate-button:hover {
+      background-color: #d4af37;
+      color: #1a1f36;
+      box-shadow: 0 0 10px #d4af37;
+    }
   </style>
 </head>
 <body>
@@ -62,8 +123,13 @@
   </header>
 
   <div class="container">
-    <h1>Welcome to Legal Ai(d)!</h1>
-    <p>Legal Ai(d) is a nonprofit initiative dedicated to increasing legal awareness and accessibility for communities in NYC. By combining both law and technology, our app provides legal guidance, non-partisan legal updates, community resources, and connections to legal aid & pro bono services.</p>
+    <div class="typewriter">
+      <h1>Welcome to Legal Ai(d)!</h1>
+    </div>
+    <p style="margin-top: 1rem;">
+      Legal Ai(d) is a nonprofit initiative dedicated to increasing legal awareness and accessibility for communities in NYC. By combining both law and technology, our app provides legal guidance, non-partisan legal updates, community resources, and connections to legal aid & pro bono services.
+    </p>
+    <a href="donate.html" class="donate-button">Support Our Work</a>
   </div>
 
   <script>
