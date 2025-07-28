@@ -14,21 +14,16 @@
       opacity: 0;
       animation: fadeIn 1s ease-in forwards;
     }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
+    @keyframes fadeIn { to { opacity: 1; } }
     header {
       background-color: #1a1f36;
-      padding: 2rem 2rem;
+      padding: 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-bottom: 2px solid #d4af37;
       font-size: 1.4rem;
     }
-
     nav a {
       color: white;
       text-decoration: none;
@@ -38,9 +33,7 @@
       transition: color 0.3s ease;
       font-size: 1.3rem;
     }
-
-    nav a::after,
-    nav a.active::after {
+    nav a::after {
       content: '';
       position: absolute;
       width: 0%;
@@ -50,38 +43,19 @@
       left: 0;
       transition: width 0.3s ease;
     }
-
-    nav a:hover::after,
-    nav a.active::after {
-      width: 100%;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #d4af37;
-    }
-
+    nav a:hover::after, nav a.active::after { width: 100%; }
+    nav a:hover, nav a.active { color: #d4af37; }
     .container {
       padding: 4rem 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
       max-width: 800px;
-      margin: 0 auto;
+      margin: auto;
     }
-
     h2 {
       font-size: 2.5rem;
       color: #d4af37;
       margin-bottom: 1rem;
     }
-
-    .highlight {
-      color: #d4af37;
-    }
-
     .donate-info {
       background-color: #2b2f4a;
       padding: 2rem;
@@ -93,11 +67,7 @@
       box-shadow: 0 0 10px #000;
       transition: transform 0.3s ease;
     }
-
-    .donate-info:hover {
-      transform: translateY(-5px);
-    }
-
+    .donate-info:hover { transform: translateY(-5px); }
     .donate-button {
       margin-top: 2rem;
       display: inline-block;
@@ -109,9 +79,7 @@
       font-weight: bold;
       font-size: 1.2rem;
       transition: all 0.3s ease;
-      box-shadow: 0 0 10px transparent;
     }
-
     .donate-button:hover {
       background-color: #d4af37;
       color: #1a1f36;
@@ -126,38 +94,24 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="who.html">Who We Are</a>
-      <a href="donate.html">Donate</a>
+      <a href="donate.html" class="active">Donate</a>
     </nav>
   </header>
 
   <div class="container">
     <h2>Donate</h2>
-
     <div class="donate-info">
-      <p>At Legal Ai(d), we use donations to support our incredible team and expand our work into new cities and states.</p>
-      <p>If you have any questions, concerns, or feedback, please reach out to us at <strong>legalainyc@gmail.com</strong></p>
+      <p>At Legal Ai(d), we use donations to support our team and expand our work into new cities and states.</p>
+      <p>For questions or feedback, email <strong>legalainyc@gmail.com</strong>.</p>
     </div>
-
     <a href="https://www.yourdonationlink.com" class="donate-button">Click here to donate</a>
   </div>
 
-  <script>
-    const links = document.querySelectorAll("nav a");
-    const path = window.location.pathname.split("/").pop() || "index.html";
-    links.forEach(link => {
-      if (link.getAttribute("href") === path) {
-        link.classList.add("active");
-      }
-    });
-  </script>
-
   <footer style="text-align:center; padding:1.5rem; border-top:2px solid #d4af37; margin-top:3rem;">
-  <p style="margin:0; font-size:1.1rem;">📲 Get the Legal Ai(d) App</p>
-  <a href="https://apps.apple.com/us/app/legal-ai-d-your-legal-guide/id6745524170" target="_blank">
-    <img src="images/appstore-badge.png" alt="Download on the App Store" style="width:160px; margin-top:0.5rem;">
-  </a>
-</footer>
-
-  
+    <p style="margin:0;">📲 Get the Legal Ai(d) App</p>
+    <a href="https://apps.apple.com/us/app/legal-ai-d-your-legal-guide/id6745524170" target="_blank">
+      <img src="images/appstore-badge.png" alt="App Store" style="width:160px; margin-top:0.5rem;">
+    </a>
+  </footer>
 </body>
 </html>
