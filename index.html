@@ -14,21 +14,16 @@
       opacity: 0;
       animation: fadeIn 1s ease-in forwards;
     }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
+    @keyframes fadeIn { to { opacity: 1; } }
     header {
       background-color: #1a1f36;
-      padding: 2rem 2rem;
+      padding: 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-bottom: 2px solid #d4af37;
       font-size: 1.4rem;
     }
-
     nav a {
       color: white;
       text-decoration: none;
@@ -38,7 +33,6 @@
       transition: color 0.3s ease;
       font-size: 1.3rem;
     }
-
     nav a::after {
       content: '';
       position: absolute;
@@ -49,55 +43,27 @@
       left: 0;
       transition: width 0.3s ease;
     }
-
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #d4af37;
-    }
-
+    nav a:hover::after { width: 100%; }
+    nav a:hover, nav a.active { color: #d4af37; }
     .container {
       padding: 4rem 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       text-align: center;
       max-width: 800px;
-      margin: 0 auto;
+      margin: auto;
     }
-
-    .highlight {
-      color: #d4af37;
-    }
-
+    .highlight { color: #d4af37; }
     .typewriter h1 {
       overflow: hidden;
       border-right: .15em solid #d4af37;
       white-space: nowrap;
       margin: 0 auto;
       letter-spacing: .05em;
-      animation:
-        typing 3s steps(40, end),
-        blink-caret .75s step-end infinite;
+      animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
     }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #d4af37 }
-    }
-
+    @keyframes typing { from { width: 0 } to { width: 100% } }
+    @keyframes blink-caret { from, to { border-color: transparent } 50% { border-color: #d4af37 } }
     .donate-button {
       margin: 2rem auto 0;
-      display: block;
       padding: 1rem 2rem;
       border: 2px solid #d4af37;
       border-radius: 5px;
@@ -107,57 +73,31 @@
       transition: all 0.3s ease;
       width: 70%;
       max-width: 400px;
-      text-align: center;
+      display: block;
     }
-
     .donate-button:hover {
       background-color: #d4af37;
       color: #1a1f36;
       box-shadow: 0 0 10px #d4af37;
     }
-
-    .logo-image {
-      width: 120px;
-      margin-bottom: 1.5rem;
-    }
-
-    .app-demo {
-      width: 250px;
-      border-radius: 1rem;
-      margin: 2rem 0;
-      box-shadow: 0 0 15px #d4af37;
-    }
-
-    .faq-section {
-      margin-top: 4rem;
-      width: 100%;
-      max-width: 800px;
-    }
-
+    .logo-image { width: 120px; margin-bottom: 1.5rem; }
+    .app-demo { width: 250px; border-radius: 1rem; margin: 2rem 0; box-shadow: 0 0 15px #d4af37; }
+    .faq-section { margin-top: 4rem; max-width: 800px; margin-left: auto; margin-right: auto; }
     .faq-item {
       background-color: #2b2f4a;
       padding: 1rem 1.5rem;
       border-left: 4px solid #d4af37;
       margin-bottom: 1rem;
       border-radius: 8px;
-      transition: background 0.3s ease;
     }
-
-    .faq-item:hover {
-      background-color: #35395c;
-    }
-
-    .faq-item h3 {
-      margin: 0 0 0.5rem;
-      color: #d4af37;
-    }
+    .faq-item h3 { margin: 0 0 0.5rem; color: #d4af37; }
   </style>
 </head>
 <body>
   <header>
     <div class="logo"><strong class="highlight">Legal Ai(d)</strong></div>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html" class="active">Home</a>
       <a href="who.html">Who We Are</a>
       <a href="donate.html">Donate</a>
     </nav>
@@ -165,58 +105,25 @@
 
   <div class="container">
     <img src="images/IconImage.png" alt="Legal Ai(d) logo" class="logo-image" />
-
-    <div class="typewriter">
-      <h1>Welcome to Legal Ai(d)!</h1>
-    </div>
-
-    <p style="margin-top: 1rem;">
-      Legal Ai(d) is a nonprofit initiative dedicated to increasing legal awareness and accessibility for communities in NYC. By combining both law and technology, our app provides legal guidance, non-partisan legal updates, community resources, and connections to legal aid & pro bono services.
-    </p>
-
+    <div class="typewriter"><h1>Welcome to Legal Ai(d)!</h1></div>
+    <p style="margin-top: 1rem;">Legal Ai(d) is a nonprofit initiative dedicated to increasing legal awareness and accessibility for communities in NYC.</p>
     <img src="images/LegalAidVideo.gif" alt="App demo" class="app-demo" />
-
     <a href="https://apps.apple.com/us/app/legal-ai-d-your-legal-guide/id6745524170" target="_blank">
-  <img src="images/appstore-badge.png" alt="Download on the App Store" style="width:180px; margin:1rem auto; display:block;">
-</a>
-
+      <img src="images/appstore-badge.png" alt="Download on the App Store" style="width:180px; margin:1rem auto; display:block;">
+    </a>
     <div class="faq-section">
-      <div class="faq-item">
-        <h3>📱 Is Legal Ai(d) free to use?</h3>
-        <p>Yes! Legal Ai(d) is completely free to use. Our mission is to make legal support accessible to everyone.</p>
-      </div>
-      <div class="faq-item">
-        <h3>🤖 How does the app work?</h3>
-        <p>The app opens to our helpful Legal Ai(d) chatbot, but feel free to bookmark any helpful information or check out the many available resources.</p>
-      </div>
-      <div class="faq-item">
-        <h3>🔐 Is my information safe?</h3>
-        <p>Absolutely. We do not store or share any of your personal data. Your privacy is a top priority.</p>
-      </div>
+      <div class="faq-item"><h3>📱 Is Legal Ai(d) free?</h3><p>Yes, it’s completely free.</p></div>
+      <div class="faq-item"><h3>🤖 How does the app work?</h3><p>The app opens to our helpful chatbot with resources.</p></div>
+      <div class="faq-item"><h3>🔐 Is my information safe?</h3><p>We do not store or share your data.</p></div>
     </div>
-
     <a href="donate.html" class="donate-button">Support Our Work</a>
   </div>
 
-  <script>
-    const links = document.querySelectorAll("nav a");
-    const path = window.location.pathname.split("/").pop() || "index.html";
-
-    links.forEach(link => {
-      if (link.getAttribute("href") === path) {
-        link.classList.add("active");
-      }
-    });
-  </script>
-
   <footer style="text-align:center; padding:1.5rem; border-top:2px solid #d4af37; margin-top:3rem;">
-  <p style="margin:0; font-size:1.1rem;">📲 Get the Legal Ai(d) App</p>
-  <a href="https://apps.apple.com/us/app/legal-ai-d-your-legal-guide/id6745524170" target="_blank">
-    <img src="images/appstore-badge.png" alt="Download on the App Store" style="width:160px; margin-top:0.5rem;">
-  </a>
-</footer>
-
-  
-  
+    <p style="margin:0;">📲 Get the Legal Ai(d) App</p>
+    <a href="https://apps.apple.com/us/app/legal-ai-d-your-legal-guide/id6745524170" target="_blank">
+      <img src="images/appstore-badge.png" alt="App Store" style="width:160px; margin-top:0.5rem;">
+    </a>
+  </footer>
 </body>
 </html>
